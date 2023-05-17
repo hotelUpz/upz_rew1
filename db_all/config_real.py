@@ -12,7 +12,7 @@ port = '3306'
 # git@github.com:hotelUpz/hotels_upz_main.git
 # Agent pid 25775
 
-# email: hotel.upz69@gmail.com
+# email: hotel.upz69@gmail.com  
 # password: 8dGBX2Kx
 
 # gitHab: 

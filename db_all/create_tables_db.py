@@ -31,7 +31,7 @@ def create_tables():
     except:
         pass
 
-    create_table_query1 = '''
+    create_table_query7 = '''
     CREATE TABLE result_review_test1 (
         id INT AUTO_INCREMENT PRIMARY KEY,
         hotelid VARCHAR(20),
@@ -45,10 +45,10 @@ def create_tables():
         checkin TEXT,
         checkout TEXT,
         languagecode TEXT
-    )
+    )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci
     '''
 
-    create_table_query2 = '''
+    create_table_query9 = '''
     CREATE TABLE black_list_reviews_test1 (
         id INT AUTO_INCREMENT PRIMARY KEY,
         hotelid VARCHAR(20),
@@ -56,8 +56,8 @@ def create_tables():
         otziv VARCHAR(4)
     )
     '''
-    cursor.execute(create_table_query1)
-    cursor.execute(create_table_query2)
+    cursor.execute(create_table_query7)
+    cursor.execute(create_table_query9)
 
 
     cursor.close()

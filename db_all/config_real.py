@@ -5,6 +5,13 @@ host =  '5.75.140.137'
 port = '3306'
 
 
+# ssh-key:
+# ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCSFRHVpRpvPpIFskOM4sKmyewdUYhk93yqcnLHhiECxguwds/e9BOkMqV7ojk26Yea05aexGacjD+Flbb4uDWjLKFlxUbRPh/4xhi401/8Bmx8F/q9OXkQ7hwNjoToDQMceJI3QoHKSBrEDUqKJyb5gSPjFzFyVrSQbGNVYPCLEUg6R2kl5i/x8JCnVrikH+Dh5geHZQa4HP/rCwrX+uYdvbuE87lSpj4rUFQFDa7nzLcCFozogjheGHg40F50iXmVNbO1LxPMb+L8AnVnK2/WrIDi+FiuCB7ChvdHtIDjq+dBQ3mXiEyas0uT5y7C/Q4HxPb2fmVnzmmF3UOeOZJNxWuhNSuUQZfcyoxMZlXUgLC2/3mP4K5MzAq+25eHsLOTybF6FR7OLNEIKDZnxxIu90ns0BmdtGnP1BYty7k481sDhbEpidUAg2bNF/H+QbcZylRaGUpjyWp+C8nJHal9KlXta8vO6eLmASjbkH9ksTpUK+KBnmu5zuYrNqdm4q8= kali@asus
+# ssh-password:
+# 9283s
+# git@github.com:hotelUpz/hotels_upz_main.git
+# Agent pid 25775
+
 # email: hotel.upz69@gmail.com
 # password: 8dGBX2Kx
 
@@ -19,107 +26,5 @@ port = '3306'
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# user = 'hotel_test1'
-# password = '6687vono'
-# database = 'hote_tophot77_db'
-# host =  '5.75.140.137'
-# port = 8090
-
-
-# database = 'hote\_tophot77\_db'
-# host = 'localhost'
-
-# GRANT ALL PRIVILEGES ON hote_tophot77_db.* TO admin@5.75.140.137;
-
-
-# server = "localhost";
-# db_user="hote_tophot77_db";
-# db_pass='8dGBX2Kx';
-# db_name="hote_tophot77_db";
-
-
-
-
-# my credentials for phpMyAdmin:
-# hotel_test1'@'5.75.140.137
-# password: 6687vono
-
-
-# 31.41.69.227
-
-# GRANT ALL PRIVILEGES ON *.* TO `hotel_test1`@`5.75.140.137` IDENTIFIED BY PASSWORD '*8E63AF996832CD1470B279E6F43AFE79599A42AE' REQUIRE SSL WITH GRANT OPTION;
-
-
-# GRANT ALL PRIVILEGES ON hote_tophot77_db.* TO 'admin'@'5.75.140.137' IDENTIFIED BY '6lrMgXfBcwakSujt';
-
-
-
-
-
-
-
-# 'user': 'hote_tophot77_db',
-# 'password': '8dGBX2Kx',
-# 'host': '5.75.140.137',
-# 'port': 8090,
-# 'database': 'hote\_tophot77\_db',
-# 'proxy_host': 'u9FSEvF3:igzQ94p1@154.7.207.155',
-# 'proxy_port': 63732
-
-# 127.0.0.1:3306
-# 127.0.0.1:35845
-
-# SET GLOBAL max_allowed_packet=1073741824;
-# SET GLOBAL net_buffer_length=1048576;
-# SET GLOBAL connect_timeout=31536000;
-# SET GLOBAL interactive_timeout=31536000;
-# SET GLOBAL wait_timeout=31536000;
-
-
-
-# connect_timeout = 10
-# net_read_timeout = 30
-# wait_timeout = 28800
-# interactive_timeout = 28800
 
 

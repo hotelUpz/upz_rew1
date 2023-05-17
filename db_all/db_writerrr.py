@@ -24,136 +24,45 @@ def db_wrtr(total):
         print(f"Error connecting to MySQL: {e}")
 
     print(len(total))
-    # print(total)
-    resPhoto = []
-    resDescription = []
-    resFacilities = []
-    resRooms = []
-    resRoomsBlock = []
 
+    resReviews = []
     try:
         for t in total:
             try:
-                resPhoto += t[0][0]
-            except:
-                continue 
-        try:
-            resPhoto = list(filter(None, resPhoto))
-            resPhoto = list(filter("", resPhoto)) 
-        except:
-            pass
-        try:
-            query1 = "INSERT INTO result_photos_test1 (hotelid, photo_id, tags, url_square60, url_max) VALUES (%s, %s, %s, %s, %s)"
-
-            for item in resPhoto:
-                try:
-                    values = (item["hotelid"], item["photo_id"], item["tags"], item["url_square60"], item["url_max"])
-                    cursor.execute(query1, values)
-                except:
-                    continue
-            conn.commit()
-        except:
-            pass
-        for t in total:
-            try:
-                resDescription.append(t[0][1])
+                for t2 in t[0]:
+                    try:
+                        resReviews += t2
+                    except Exception as ex:
+                        print(f"writerr__str13__{ex}")
+                        continue 
             except Exception as ex:
-                # print(f"writerr__str30__{ex}")
-                continue 
+                print(f"writerr__str18__{ex}")
+                continue
         try:
-            resDescription = list(filter(None, resDescription))
-            resDescription = list(filter("", resDescription)) 
+            resReviews = list(filter(None, resReviews))
+            resReviews = list(filter("", resReviews)) 
+            resReviews = list(filter([], resReviews)) 
         except:
             pass
+        print(resReviews[0])
         try:
-            query2 = "INSERT INTO result_description_test1 (hotelid, enusname) VALUES (%s, %s)"
-            # query = "UPDATE result_description_test1 SET hotelid = %s, enusname = %s"
-            for item in resDescription:
-                try:        
-                    values = (item["hotelid"], item["enusname"])
-                    cursor.execute(query2, values)
+            query7 = "INSERT INTO result_review_test1 (hotelid, title, cons, pros, dt1, average_score, author_name, room_id, checkin, checkout, languagecode) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
+                  
+            for item in resReviews:
+                try:
+                    values = (item["hotelid"], item["title"], item["cons"], item["pros"], item["dt1"], item["average_score"], item["author_name"], item["room_id"], item["checkin"], item["checkout"], item["languagecode"])
+                    cursor.execute(query7, values)
                 except Exception as ex:
-                    print(ex)
+                    print(f"db_writerr__str56__{ex}")
                     continue
             conn.commit()
         except:
             pass
-
-        for t in total:
-            try:
-               resFacilities += t[0][2]
-            except:
-                continue 
-        try:
-            resFacilities = list(filter(None, resFacilities))
-            resFacilities = list(filter("", resFacilities)) 
-        except:
-            pass
-        try: 
-            query3 = "INSERT INTO result_facilities_test1 (hotelid, facilitytype_id, name, facilitytype_name, hotelfacilitytype_id, uniq) VALUES (%s, %s, %s, %s, %s, %s)"
-
-            for item in resFacilities:
-                try:
-                    values = (item["hotelid"], item["facilitytype_id"], item["name"], item["facilitytype_name"], item["hotelfacilitytype_id"], item["uniq"])
-                    cursor.execute(query3, values)
-                except:
-                    continue
-            conn.commit() 
-        except:
-            pass
-
-        for t in total:
-            try:
-               resRooms += t[0][3]
-            except:
-                continue 
-        try:
-            resRooms = list(filter(None, resRooms))
-            resRooms = list(filter("", resRooms)) 
-        except:
-            pass
-        try: 
-            query4 = "INSERT INTO result_room_test1 (hotelid, roomid, endescription, allow_children, photo1, photo2, photo3, photo4, photo5, photo6, photo7, photo8, photo9, photo10, private_bathroom_highlight, bed_configurations) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
-
-            for item in resRooms:
-                try:
-                    values = (item["hotelid"], item["roomid"], item["endescription"], item["allow_children"], item["photo1"], item["photo2"], item["photo3"], item["photo4"], item["photo5"], item["photo6"], item["photo7"], item["photo8"], item["photo9"], item["photo10"], item["private_bathroom_highlight"], item["bed_configurations"])
-                    cursor.execute(query4, values)
-                except:
-                    continue
-            conn.commit() 
-        except:
-            pass
-        for t in total:
-            try:
-               resRoomsBlock += t[0][4]
-            except:
-                continue 
-        try:
-            resRoomsBlock = list(filter(None, resRoomsBlock))
-            resRoomsBlock = list(filter("", resRoomsBlock)) 
-        except:
-            pass
-        try: 
-            query5 = "INSERT INTO result_room_block_test1 (hotelid, room_id, gross_price, currency, room_name, nr_children, max_occupancy, mealplan, room_surface_in_m2, nr_adults, all_inclusive) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
-
-            for item in resRoomsBlock:
-                try:
-                    values = (item["hotelid"], item["room_id"], item["gross_price"], item["currency"], item["room_name"], item["nr_children"], item["max_occupancy"], item["mealplan"], item["room_surface_in_m2"], item["nr_adults"], item["all_inclusive"])
-                    cursor.execute(query5, values)
-                except Exception as ex:
-                    print(ex)
-                    continue
-            conn.commit() 
-        except Exception as ex:
-            print(ex)
-
+        
 
     except Exception as ex:
-        print(ex)
-        pass
-
-
+        print(f"db_writerr__str63__{ex}")
+        # pass
     try:
         cursor.close()
         conn.close()
@@ -161,6 +70,28 @@ def db_wrtr(total):
         print(f"Error connecting to MySQL: {e}")
 
     return 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # total = None
 # db_opener(total)

@@ -25,18 +25,18 @@ def bl_db_wrtr(black_list):
     # print(black_list)
 
     try:
-        query6 = "INSERT INTO black_list_test1 (hotelid, url, fotos, description, facility, otziv, room, room_block) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)"
+        query9 = "INSERT INTO black_list_reviews_test1 (hotelid, url, otziv) VALUES (%s, %s, %s)"
 
         for item in black_list:
             try:
-                values = (item["hotel_id"], item["url"], item["fotos"], item["description"], item["facility"], item["otziv"], item["room"], item["room_block"])
-                cursor.execute(query6, values)
+                values = (item["hotel_id"], item["url"], item["otziv"])
+                cursor.execute(query9, values)
             except Exception as ex:
                 print(f"b_db_filter_func___59{ex}")
                 continue
         conn.commit()
     except Exception as ex:
-        print(f"b_db_filter_func___63{ex}")
+        print(f"b_db_filter_func___39{ex}")
 
     try:
         cursor.close()
